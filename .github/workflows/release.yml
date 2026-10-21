@@ -49,3 +49,27 @@ jobs:
             --generate-notes \
             --verify-tag \
             --latest
+
+  snap:
+    name: Publish to Snap Store (stable)
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check store credentials
+        env:
+          SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
+        run: |
+          [ -n "$SNAPCRAFT_STORE_CREDENTIALS" ] || {
+            echo "::error::Secret SNAPCRAFT_STORE_CREDENTIALS is not set — see docs/architecture.md"; exit 1; }
+
+      - uses: actions/checkout@v4
+
+      - uses: snapcore/action-build@v1
+        id: build
+
+      - uses: snapcore/action-publish@v1
+        env:
+          SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
+        with:
+          snap: ${{ steps.build.outputs.snap }}
+          release: stable

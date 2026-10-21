@@ -81,12 +81,16 @@ Snap remaps these under `~/snap/klipr/current/`.
 |---|---|---|
 | `.deb` (`Architecture: all`) | `packaging/build.sh` | CI on every code change, attached to GitHub Releases |
 | APT repo | `scripts/publish_apt.sh` → `landing/apt/` | Maintainer, locally (needs the signing key) |
-| Snap | `snap/snapcraft.yaml` | Launchpad auto-build on push |
+| Snap | `snap/snapcraft.yaml` | `release.yml` on a version tag → Snap Store `stable` (needs the `SNAPCRAFT_STORE_CREDENTIALS` secret) |
 | Debian archive | `debian/` | Not used by CI (maintainer only) |
 
 The `.deb` installs modules to `/usr/share/klipr/`, a launcher to `/usr/bin/klipr` (it `cd`s there and runs
 `main.py`), the desktop entry as `io.github.nguyenduc2309.klipr.desktop`, and the icon at
 `/usr/share/icons/hicolor/128x128/apps/klipr.png`.
+
+The snap job logs in with a store token kept as the repo secret `SNAPCRAFT_STORE_CREDENTIALS`. Create it once with
+`snapcraft export-login --snaps=klipr --acls package_access,package_push,package_update,package_release -` and store
+the output with `gh secret set SNAPCRAFT_STORE_CREDENTIALS`.
 
 **`packaging/build.sh` lists files explicitly.** A new module must be added there, otherwise the package ships
 without it. CI catches this: it checks that every `src/**/*.py` exists in the installed package.

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Bump the version everywhere, commit, tag and push.
-# GitHub Actions (release.yml) then tests, builds the .deb and publishes the release.
+# GitHub Actions (release.yml) then tests, builds the .deb, publishes the GitHub
+# Release and pushes the snap to the Snap Store (stable).
 #
 # Usage: scripts/release.sh 1.2.8
 set -euo pipefail
