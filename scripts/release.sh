@@ -35,4 +35,4 @@ read -r -p "Commit, tag v$NEW and push? [y/N] " ok
 git commit -qam "release: v$NEW"
 git tag -a "v$NEW" -m "v$NEW"
 git push --atomic origin main "v$NEW"
-echo "Pushed. Follow the build: https://github.com/NguyenDuc2309/klipr/actions"
+echo "Pushed. Follow the build: https://github.com/MinduLabs/klipr/actions"

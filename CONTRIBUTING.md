@@ -4,7 +4,7 @@
 
 Thanks for helping! Bug reports, fixes, features and docs are all welcome.
 
-- **Found a bug?** [Open an issue](https://github.com/NguyenDuc2309/klipr/issues) with your distro + version,
+- **Found a bug?** [Open an issue](https://github.com/MinduLabs/klipr/issues) with your distro + version,
   desktop (GNOME/KDE…, X11/Wayland), how you installed Klipr (APT/Snap/.deb/source), steps to reproduce, and the
   terminal output of `klipr` if it crashed.
 - **Want to add a feature?** Open an issue first so we can agree on the approach before you write code.
@@ -15,7 +15,7 @@ Klipr is Python + GTK4 through PyGObject. The easiest setup uses your distro's p
 
 ```bash
 sudo apt install git python3 python3-gi python3-gi-cairo gir1.2-gtk-4.0 python3-pil
-git clone https://github.com/NguyenDuc2309/klipr.git
+git clone https://github.com/MinduLabs/klipr.git
 cd klipr
 python3 src/main.py
 ```

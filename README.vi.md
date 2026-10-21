@@ -14,8 +14,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/NguyenDuc2309/klipr/releases/latest"><img src="https://img.shields.io/github/v/release/NguyenDuc2309/klipr?style=flat-square&label=version&color=blue" alt="Version" /></a>
-  <a href="https://github.com/NguyenDuc2309/klipr/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/NguyenDuc2309/klipr/ci.yml?branch=main&style=flat-square&label=CI" alt="CI" /></a>
+  <a href="https://github.com/MinduLabs/klipr/releases/latest"><img src="https://img.shields.io/github/v/release/MinduLabs/klipr?style=flat-square&label=version&color=blue" alt="Version" /></a>
+  <a href="https://github.com/MinduLabs/klipr/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/MinduLabs/klipr/ci.yml?branch=main&style=flat-square&label=CI" alt="CI" /></a>
   <img src="https://img.shields.io/badge/platform-Linux-green?style=flat-square" alt="Platform" />
   <img src="https://img.shields.io/badge/GTK-4-orange?style=flat-square" alt="GTK4" />
   <img src="https://img.shields.io/badge/python-3.10+-yellow?style=flat-square" alt="Python" />
@@ -64,11 +64,11 @@ Cần Ubuntu 22.04+ / Debian 12+ hoặc distro khác có GTK 4 và Python 3.10+.
 Bản mới tự đến qua `sudo apt upgrade`.
 
 ```bash
-curl -fsSL https://nguyenduc2309.github.io/klipr/apt/klipr-archive-keyring.asc \
+curl -fsSL https://mindulabs.github.io/klipr/apt/klipr-archive-keyring.asc \
     | sudo gpg --dearmor -o /usr/share/keyrings/klipr-archive-keyring.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/klipr-archive-keyring.gpg] \
-https://nguyenduc2309.github.io/klipr/apt stable main" \
+https://mindulabs.github.io/klipr/apt stable main" \
     | sudo tee /etc/apt/sources.list.d/klipr.list
 
 sudo apt update
@@ -83,7 +83,7 @@ sudo snap install klipr
 
 ### File `.deb` từ GitHub Releases
 
-Tải `klipr_<version>_all.deb` ở [Releases](https://github.com/NguyenDuc2309/klipr/releases/latest)
+Tải `klipr_<version>_all.deb` ở [Releases](https://github.com/MinduLabs/klipr/releases/latest)
 (`all` nghĩa là một gói chạy cho mọi loại CPU, vì Klipr viết bằng Python thuần), rồi:
 
 ```bash
@@ -150,7 +150,7 @@ Bấm icon bánh răng trong app, hoặc sửa file `~/.config/klipr/setting.jso
 | Tray trên GNOME | Cần extension AppIndicator (Ubuntu cài sẵn) |
 
 Gặp lỗi? Xem [xử lý sự cố](docs/architecture.md#troubleshooting) hoặc
-[mở issue](https://github.com/NguyenDuc2309/klipr/issues).
+[mở issue](https://github.com/MinduLabs/klipr/issues).
 
 ## Đóng góp
 

@@ -463,7 +463,7 @@ function initLightbox() {
  * Dynamic GitHub Release Fetching
  */
 async function fetchLatestRelease() {
-    const repo = 'NguyenDuc2309/klipr';
+    const repo = 'MinduLabs/klipr';
     const downloadBtn = document.getElementById('download-deb-btn');
 
     try {

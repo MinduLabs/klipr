@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: klipr
 Upstream-Contact: Nguyen Duc <nguyenminhduc230903@gmail.com>
-Source: https://github.com/NguyenDuc2309/klipr
+Source: https://github.com/MinduLabs/klipr
 Comment:
  The upstream git tree carries the project's marketing website under landing/,
  which is no part of the packaged program: nothing in it is built, installed or

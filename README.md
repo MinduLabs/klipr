@@ -14,8 +14,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/NguyenDuc2309/klipr/releases/latest"><img src="https://img.shields.io/github/v/release/NguyenDuc2309/klipr?style=flat-square&label=version&color=blue" alt="Version" /></a>
-  <a href="https://github.com/NguyenDuc2309/klipr/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/NguyenDuc2309/klipr/ci.yml?branch=main&style=flat-square&label=CI" alt="CI" /></a>
+  <a href="https://github.com/MinduLabs/klipr/releases/latest"><img src="https://img.shields.io/github/v/release/MinduLabs/klipr?style=flat-square&label=version&color=blue" alt="Version" /></a>
+  <a href="https://github.com/MinduLabs/klipr/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/MinduLabs/klipr/ci.yml?branch=main&style=flat-square&label=CI" alt="CI" /></a>
   <img src="https://img.shields.io/badge/platform-Linux-green?style=flat-square" alt="Platform" />
   <img src="https://img.shields.io/badge/GTK-4-orange?style=flat-square" alt="GTK4" />
   <img src="https://img.shields.io/badge/python-3.10+-yellow?style=flat-square" alt="Python" />
@@ -64,11 +64,11 @@ Requires Ubuntu 22.04+ / Debian 12+ or another distro with GTK 4 and Python 3.10
 Updates arrive with `sudo apt upgrade`.
 
 ```bash
-curl -fsSL https://nguyenduc2309.github.io/klipr/apt/klipr-archive-keyring.asc \
+curl -fsSL https://mindulabs.github.io/klipr/apt/klipr-archive-keyring.asc \
     | sudo gpg --dearmor -o /usr/share/keyrings/klipr-archive-keyring.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/klipr-archive-keyring.gpg] \
-https://nguyenduc2309.github.io/klipr/apt stable main" \
+https://mindulabs.github.io/klipr/apt stable main" \
     | sudo tee /etc/apt/sources.list.d/klipr.list
 
 sudo apt update
@@ -83,7 +83,7 @@ sudo snap install klipr
 
 ### `.deb` from GitHub Releases
 
-Download `klipr_<version>_all.deb` from [Releases](https://github.com/NguyenDuc2309/klipr/releases/latest)
+Download `klipr_<version>_all.deb` from [Releases](https://github.com/MinduLabs/klipr/releases/latest)
 (`all` means one package for every CPU, since Klipr is pure Python), then:
 
 ```bash
@@ -150,7 +150,7 @@ Use the gear icon in the app, or edit `~/.config/klipr/setting.json`.
 | Tray on GNOME | Needs the AppIndicator extension (preinstalled on Ubuntu) |
 
 Having trouble? See [troubleshooting](docs/architecture.md#troubleshooting) or
-[open an issue](https://github.com/NguyenDuc2309/klipr/issues).
+[open an issue](https://github.com/MinduLabs/klipr/issues).
 
 ## Contributing
 

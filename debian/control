@@ -9,9 +9,9 @@ Build-Depends:
  python3-pil,
  desktop-file-utils <!nocheck>,
 Standards-Version: 4.7.4
-Homepage: https://github.com/NguyenDuc2309/klipr
-Vcs-Browser: https://github.com/NguyenDuc2309/klipr
-Vcs-Git: https://github.com/NguyenDuc2309/klipr.git
+Homepage: https://github.com/MinduLabs/klipr
+Vcs-Browser: https://github.com/MinduLabs/klipr
+Vcs-Git: https://github.com/MinduLabs/klipr.git
 
 Package: klipr
 Architecture: all

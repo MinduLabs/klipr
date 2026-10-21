@@ -4,7 +4,7 @@
 
 Cảm ơn bạn đã muốn góp sức! Báo lỗi, sửa lỗi, tính năng mới hay tài liệu đều được chào đón.
 
-- **Gặp lỗi?** [Mở issue](https://github.com/NguyenDuc2309/klipr/issues), ghi rõ distro + phiên bản, desktop
+- **Gặp lỗi?** [Mở issue](https://github.com/MinduLabs/klipr/issues), ghi rõ distro + phiên bản, desktop
   (GNOME/KDE…, X11/Wayland), cách cài Klipr (APT/Snap/.deb/source), các bước tái hiện, và output terminal khi chạy
   `klipr` nếu app bị crash.
 - **Muốn thêm tính năng?** Mở issue trước để thống nhất hướng làm rồi mới viết code.
@@ -15,7 +15,7 @@ Klipr viết bằng Python + GTK4 qua PyGObject. Cách dễ nhất là dùng gó
 
 ```bash
 sudo apt install git python3 python3-gi python3-gi-cairo gir1.2-gtk-4.0 python3-pil
-git clone https://github.com/NguyenDuc2309/klipr.git
+git clone https://github.com/MinduLabs/klipr.git
 cd klipr
 python3 src/main.py
 ```
