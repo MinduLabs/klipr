@@ -198,7 +198,7 @@ function safeSetStorage(key, val) {
 }
 
 let currentLang = safeGetStorage('klipr_lang', 'en');
-let currentReleaseTag = 'v1.2.7';
+let currentReleaseTag = 'v1.2.8';
 
 /**
  * Public function to set language
@@ -471,7 +471,7 @@ async function fetchLatestRelease() {
         if (!response.ok) return;
 
         const release = await response.json();
-        currentReleaseTag = release.tag_name || 'v1.2.7';
+        currentReleaseTag = release.tag_name || 'v1.2.8';
         updateVersionBadge();
 
         const debAsset = release.assets?.find(asset => asset.name.endsWith('.deb'));
