@@ -5,20 +5,20 @@ Codename: stable
 Architectures: all
 Components: main
 Description: Klipr clipboard manager APT repository
-Date: Thu, 20 Aug 2026 09:47:15 +0000
+Date: Wed, 21 Oct 2026 07:38:11 +0000
 MD5Sum:
- b786bcfcc4caa591173a7d2671c92b97              184 Release
- aaca8d7f9c63bfb6a2015fd25b22bd1a              600 main/binary-all/Packages
- 791f673ad4e7ac4b62a80684451149e6              442 main/binary-all/Packages.gz
+ d2d30ddae585727ff7d86833da6551e4              184 Release
+ 1c0037f622e12a681c99aa0199cf5052              600 main/binary-all/Packages
+ 671b0b034f6e4d516982f7a6b1fa1404              440 main/binary-all/Packages.gz
 SHA1:
- cfa51b493e479ca8c5cf038d936dfc02b4920f93              184 Release
- 4d967fd2c2a0a67158633a844e0dc8e7e360a9fa              600 main/binary-all/Packages
- f51df7ca5545748fb18a86998b0338cb073c1447              442 main/binary-all/Packages.gz
+ 2cf8489b36a6cf80963126df99def28e42fe6e69              184 Release
+ eed6ba34bbeb72b30e6bffe601f3eba106f6d191              600 main/binary-all/Packages
+ e304096bf76289ba7d2c85746a7b6028f0aea4f6              440 main/binary-all/Packages.gz
 SHA256:
- 453f60895d239e56fdf1cca333b880764abc336f37d47aa62e95db4c9339e434              184 Release
- ee82bfd91f665919713ba1436586d1dc76bca0790d37bbda75d4e5224943f466              600 main/binary-all/Packages
- a4c5fa42f027f322ba9363d11eafc7f8b1a3512fc9319e87f7535b47e13116c9              442 main/binary-all/Packages.gz
+ ef11555c9cb67e912709f7e9464055d8c7dcc1462624857d78209f8069806726              184 Release
+ d3081934b896df99d1b11d4948fb689d80aff5e7f15c870df4414d2977389b96              600 main/binary-all/Packages
+ 2825ea690879b065c5d649426547e6085225469a2786404ee4db7abff0f54f79              440 main/binary-all/Packages.gz
 SHA512:
- 1d90ecfaecddfaeddff51fc5395e9df0ac11da4a8ea000c366e93c875ca60e2e994711a16c7205e4e0b95ee3b8619f00de33c5d5900616018803741cf0a8d8b8              184 Release
- cd4a21598eb285c81e7dba4030142d3d697c09f831154605745da95332eb357f493362fbf646ed4e8b920f66b792f3c7afa7ccea22dbd97ff89a04cadf2a2a22              600 main/binary-all/Packages
- 9122041698e38825102ba9b207e923e5df62173bfe4c620b3ab36155221c7f2ee5f97e595db4659c936e62980992e8034112baa14f6ccab97391e4c464d27d27              442 main/binary-all/Packages.gz
+ d4089c9bd807be4d09110567cc3f690eee78b7b987702ca992845041896af2ec24bd2a49fe6dce8c908c6d092a97c7a66ee45d8c43aca06f3e065cd0fba902d1              184 Release
+ 953d932848ee52ef301a51634c44ca1b81d77a75b4ad69674a8ae4d8705a8b551a7fd9ebf8a0a7b80f9c895bc91351efbc91ceb987d3d7f6b2ce87904942504d              600 main/binary-all/Packages
+ 5055e334bcd1b173576b3fd6e7760b923854297de8dc90bdb759926fdd4c225ca5d82c88adffeb699261aecb2ec51902015569ef0bc4327fc26eb15b2fab0291              440 main/binary-all/Packages.gz
