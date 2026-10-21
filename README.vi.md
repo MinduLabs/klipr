@@ -33,7 +33,7 @@
 
 ---
 
-Klipr chạy ngầm và lưu lại mọi thứ bạn copy, cả chữ lẫn ảnh, để không bao giờ mất một đoạn đã copy. Không Electron,
+Klipr chạy ngầm và lưu lại mọi thứ bạn copy, cả văn bản lẫn hình ảnh, để không bao giờ mất một đoạn đã copy. Không Electron,
 không nặng nề: một app GTK4 nhỏ gọn, hòa hợp với desktop của bạn.
 
 <p align="center">
