@@ -81,7 +81,9 @@ parts:
       # declares (learned the hard way while packaging the .deb for Debian:
       # a 200x200 file dropped into a 128x128-named directory fails icon
       # lookup at that size) — scale it to a real 128x128 on the way in.
+      # The gnome extension puts the SDK's python3 first on PATH and its dirs on
+      # PYTHONPATH; python3-pil (build-packages) lives in the build host's python.
       mkdir -p "$CRAFT_PART_INSTALL/usr/share/icons/hicolor/128x128/apps"
-      python3 -c "from PIL import Image; \
+      env -u PYTHONPATH /usr/bin/python3 -c "from PIL import Image; \
         Image.open('$CRAFT_PART_SRC/assets/logo.png').resize((128, 128), Image.LANCZOS) \
         .save('$CRAFT_PART_INSTALL/usr/share/icons/hicolor/128x128/apps/klipr.png')"
