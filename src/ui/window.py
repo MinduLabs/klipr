@@ -286,7 +286,8 @@ class ClipboardWindow(Gtk.ApplicationWindow):
         # the real win from trim_memory() is after the startup decode burst.
         self.connect('unmap', self._on_unmap)
 
-        # Keyboard: Ctrl+F search, Up/Down through rows, Enter copy, Esc dismiss.
+        # Keyboard: Ctrl+F search, Up/Down through rows, Enter copy, Alt+1..9 copy
+        # the n-th row, Esc dismiss.
         # Capture phase so these win before the focused widget consumes them.
         key_controller = Gtk.EventControllerKey()
         key_controller.set_propagation_phase(Gtk.PropagationPhase.CAPTURE)
@@ -486,8 +487,8 @@ class ClipboardWindow(Gtk.ApplicationWindow):
             pinned = None
             if self.active_filter == "all":
                 pinned = {row[1] for row in self.db.get_favorites(None)}
-            for item in items:
-                self.listbox.append(self._create_row(item, pinned))
+            for index, item in enumerate(items):
+                self.listbox.append(self._create_row(item, pinned, index))
 
     def _update_empty_state_ui(self, search_query):
         if search_query:
@@ -799,12 +800,29 @@ class ClipboardWindow(Gtk.ApplicationWindow):
         self.show_toast("Deleted", "success")
         self.refresh_list(self.search_entry.get_text())
 
+    _ITEM_KEYS = {
+        **{getattr(Gdk, f"KEY_{i}"): i for i in range(1, 10)},
+        **{getattr(Gdk, f"KEY_KP_{i}"): i for i in range(1, 10)},
+    }
+
     def _on_key_pressed(self, controller, keyval, keycode, state):
         ctrl = bool(state & Gdk.ModifierType.CONTROL_MASK)
 
         if ctrl and keyval in (Gdk.KEY_f, Gdk.KEY_F):
             self.btn_search.set_active(not self.btn_search.get_active())
             return True
+
+        # Alt+1..9 copies the n-th row of whatever list is showing (filter and
+        # search included). Alt keeps digits typeable in the search entry.
+        alt = bool(state & Gdk.ModifierType.ALT_MASK)
+        if alt and not ctrl:
+            n = self._ITEM_KEYS.get(keyval)
+            # Only on the main view: Settings needs Alt+digit for shortcut capture.
+            if n is not None and self.stack.get_visible_child_name() == "main":
+                row = self.listbox.get_row_at_index(n - 1)
+                if row is not None and self.content_stack.get_visible_child_name() == "list":
+                    self._on_row_activated(self.listbox, row)
+                return True
 
         if keyval == Gdk.KEY_Escape:
             if self.btn_search.get_active():
@@ -995,7 +1013,7 @@ class ClipboardWindow(Gtk.ApplicationWindow):
             self._thumb_cache.popitem(last=False)
         return texture
 
-    def _create_row(self, item, pinned=None):
+    def _create_row(self, item, pinned=None, index=None):
         item_id, content, timestamp = item[0], item[1], item[2]
         name = (item[3] if len(item) > 3 else None) or None
 
@@ -1067,6 +1085,14 @@ class ClipboardWindow(Gtk.ApplicationWindow):
             header_row.append(actions)
         else:
             top_row.append(actions)
+
+        # Always visible (actions only fade in on hover), so it sits after them.
+        if index is not None and index < 9:
+            key_lbl = Gtk.Label(label=f"Alt+{index + 1}")
+            key_lbl.add_css_class("item-shortcut")
+            key_lbl.set_valign(Gtk.Align.START)
+            key_lbl.set_tooltip_text(f"Press Alt+{index + 1} to copy")
+            (header_row if header_row is not None else top_row).append(key_lbl)
 
         btn_copy = Gtk.Button(icon_name="edit-copy-symbolic")
         btn_copy.set_focusable(False)

@@ -18,6 +18,8 @@ from gi.repository import Gtk, Gdk, GLib
 
 import database
 database.init_db()
+for text in ("item-c", "item-b", "item-a"):  # newest last → shown first
+    database.add_item(text)
 for i in range(5):
     database.add_item(f"entry-{i}")
 
@@ -65,6 +67,37 @@ def on_activate(a):
         win.btn_search.set_active(True)
         kb(None, Gdk.KEY_Escape, 0, 0)
         check("Esc closes search only", not win.btn_search.get_active())
+
+        # 4. Alt+N copies the N-th visible row (top-row and keypad digits)
+        ALT = Gdk.ModifierType.ALT_MASK
+        win.refresh_list()
+        shown = [win.listbox.get_row_at_index(i).item_data[1] for i in range(3)]
+        kb(None, Gdk.KEY_2, 0, ALT)
+        check("Alt+2 copies 2nd row", copied[-1:] == [shown[1]], f"{copied[-1:]} vs {shown[1]}")
+        kb(None, Gdk.KEY_KP_1, 0, ALT)
+        check("Alt+KP1 copies 1st row", copied[-1:] == [shown[0]])
+
+        # 5. Alt+N past the end is consumed but copies nothing
+        before = len(copied)
+        check("Alt+9 beyond list is a no-op",
+              kb(None, Gdk.KEY_9, 0, ALT) and len(copied) == before)
+
+        # 6. Alt+N follows the search results, not the full history
+        win.refresh_list("item-c")
+        kb(None, Gdk.KEY_1, 0, ALT)
+        check("Alt+1 uses filtered list", copied[-1:] == ["item-c"])
+
+        # 7. Row badges label the first rows
+        win.refresh_list()
+        top = win.listbox.get_row_at_index(0).get_child().get_first_child()
+        badge = top.get_last_child()
+        check("Row badge shows Alt+1 top-right",
+              badge.has_css_class("item-shortcut") and badge.get_label() == "Alt+1")
+
+        # 8. On the Settings view Alt+digit passes through (shortcut capture)
+        win.stack.set_visible_child_name("settings")
+        check("Alt+1 not swallowed in Settings", not kb(None, Gdk.KEY_1, 0, ALT))
+        win.stack.set_visible_child_name("main")
 
         print("\n" + ("ALL PASS" if all(r[1] for r in results)
                       else "FAILURES: " + ", ".join(n for n, ok, _ in results if not ok)))

@@ -112,6 +112,7 @@ Lịch sử và cài đặt vẫn được giữ lại. Muốn xóa luôn:
 | Mở / ẩn | `Ctrl+Alt+M`, click icon trên tray, hoặc chạy `klipr` |
 | Copy lại một mục | Click vào mục hoặc nút copy. Nội dung quay lại clipboard, sẵn sàng để dán. |
 | Tìm kiếm | `Ctrl+F` |
+| Copy nhanh 9 mục đầu | `Alt+1` … `Alt+9` (dùng được cả trong kết quả tìm kiếm và Favorites). Phím hiện ngay trên từng mục, danh sách đầy đủ ở **Settings → Shortcuts**. |
 | Thêm vào yêu thích | Nút yêu thích trên mục |
 | Trích chữ từ ảnh | Nút chữ trên mục ảnh (cần nhập API key trong Cài đặt). Chữ được copy vào clipboard. |
 | Thoát hẳn | Icon tray → **Quit** |

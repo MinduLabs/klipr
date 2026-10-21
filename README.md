@@ -112,6 +112,7 @@ Your history and settings are kept. To remove them too:
 | Open / hide | `Ctrl+Alt+M`, click the tray icon, or run `klipr` |
 | Copy an item back | Click the item or its copy button. It goes back to the clipboard, ready to paste. |
 | Search | `Ctrl+F` |
+| Copy one of the top 9 items | `Alt+1` … `Alt+9` (works in search results and Favorites too). The key is shown on each item, and all keys are listed in **Settings → Shortcuts**. |
 | Add to favorites | Favorite button on the item |
 | Extract text from an image | Text button on an image item (needs an API key in Settings). The text is copied to the clipboard. |
 | Quit completely | Tray icon → **Quit** |

@@ -134,7 +134,22 @@ class SettingsView(Gtk.Box):
         shortcut_hint.set_halign(Gtk.Align.START)
         shortcut_hint.set_margin_top(2)
         shortcut_grid.attach(shortcut_hint, 0, 1, 2, 1)
-        
+
+        # In-window keys are fixed; listed here so users can find them.
+        in_window_keys = [
+            ("Copy item 1–9", "Alt+1 … Alt+9"),
+            ("Search", "Ctrl+F"),
+            ("Close search / hide window", "Esc"),
+        ]
+        for i, (action, keys) in enumerate(in_window_keys, start=2):
+            action_lbl = Gtk.Label(label=action)
+            action_lbl.set_halign(Gtk.Align.START)
+            shortcut_grid.attach(action_lbl, 0, i, 1, 1)
+            keys_lbl = Gtk.Label(label=keys)
+            keys_lbl.set_halign(Gtk.Align.END)
+            keys_lbl.add_css_class("item-shortcut")
+            shortcut_grid.attach(keys_lbl, 1, i, 1, 1)
+
         self._add_section_header(vbox, "Behavior")
         
         behavior_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)

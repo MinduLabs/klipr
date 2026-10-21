@@ -164,6 +164,12 @@ listbox row:focus-within .clipboard-item-name {
   color: #64748B;
 }
 
+.item-shortcut {
+  color: #475569;
+  background-color: rgba(15, 23, 42, 0.03);
+  border-color: #E2E8F0;
+}
+
 button.icon-btn {
   background-color: #FFFFFF;
   border-color: #E2E8F0;

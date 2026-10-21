@@ -233,6 +233,17 @@ listbox row:focus-within .clipboard-item-name {
   margin-top: 4px;
 }
 
+.item-shortcut {
+  font-family: monospace;
+  font-size: 10px;
+  color: #b8b8b8;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-left: 6px;
+}
+
 .content-image {
   border-radius: 4px;
   margin-bottom: 4px;
